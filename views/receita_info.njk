@@ -1,0 +1,43 @@
+    {% extends "layout.njk" %}
+
+    {% block content %}
+    
+    <section class="receitas">
+        <div class="img_receita" id="{{receitas.id}}"><img src="{{receitas.image}}" alt="{{receitas.title}}" style="border-radius: 15px;" ></div>
+        <div class="nome_receita">{{receitas.title}}</div>
+        <div class="autor_receita">{{receitas.author}}</div>
+        <div class="data_recipes">
+        <div class="subtitle">Ingredientes</div>
+        <h4 class="botao-esconder">Mostrar</h4></div>
+
+        <ul class="conteudo0 esconder-conteudo">
+        {%for i in receitas.ingredients%}
+        <div class="dados_ingredients">
+        <li>{{i}}</li>
+        </div>
+        {%endfor%}
+        </ul>
+        <div class="data_recipes">
+        <div class="subtitle">Modo de preparo</div>
+        <h4 class="botao-esconder">Mostrar</h4></div>
+
+        <ul class="conteudo1 esconder-conteudo">
+        {%for i in receitas.preparation%}
+        <div class="dados_receita">
+        <p>{{i}}</p>
+        </div>
+        {%endfor%}
+        </ul>
+        <div class="data_recipes">
+        <div class="subtitle">Informações adicionais</div>
+        <h4 class="botao-esconder">Mostrar</h4></div>
+        <ul class="conteudo2 esconder-conteudo">
+        <div class="dados_receita">
+        <p>{{receitas.information}}</p>
+        </div>
+        </ul>
+        </div>
+  
+    </section>
+    <script src="scripts.js"></script>
+    {% endblock %}
